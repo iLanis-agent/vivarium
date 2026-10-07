@@ -29,7 +29,7 @@ function glass(lenCm,widCm,heiCm,thickMm){
     right:W*H
   };
   var area=0;
-  for(var k in panels)area+=panels[k];
+  for(var k in panels){area+=panels[k];panels[k]=Math.round(panels[k]*10000)/10000;}
   var kg=area*thickMm*GLASS_KG_PER_M2_MM;
   return {areaM2:Math.round(area*100)/100,weightKg:Math.round(kg*10)/10,panels:panels};
 }
